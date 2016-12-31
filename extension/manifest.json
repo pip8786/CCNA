@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Credit Card Nicknames for Amazon",
+  "description": "This extension allows you to assign nick names to your credit cards on Amazon.com (US Only).",
+  "version": "1.0",
+  "icons": {
+    "16": "images/ccna_icon16.png",
+    "48": "images/ccna_icon48.png",
+    "128": "images/ccna_icon128.png" },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/ccna_icon19.png",
+      "38": "images/ccna_icon38.png"
+    },
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts" : [{
+    "js":["lib/sha256.js","lib/jquery-3.1.1.slim.min.js","src/content.js"],
+    "matches":["https://www.amazon.com/gp/wallet*","https://www.amazon.com/gp/buy/*"]
+  }],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
