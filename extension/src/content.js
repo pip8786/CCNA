@@ -10,7 +10,8 @@ function updateNicknames() {
         function appendNickname() {
             const ccnum = CryptoJS.SHA256($(this).text().match(regex)[1]);
             if(nicknames[ccnum] != undefined) {
-                $(this).append("<span class='cc_nickname'> - "+nicknames[ccnum]+"</span>");
+                const node = $("<span class='cc_nickname'></span>").text(" - "+nicknames[ccnum]);
+                $(this).append(node);
             }
         }
 

@@ -63,7 +63,8 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 request.numbers.forEach((item) => {
                     const ccHash = CryptoJS.SHA256(item);
                     const oldValue = (nicknames[ccHash] != undefined) ? nicknames[ccHash] : "";
-                    const input = $("<input type='text' id='card"+ccHash+"' value='"+oldValue+"' placeholder='Nickname'/>");
+                    const input = $("<input type='text' id='card"+ccHash+"' placeholder='Nickname'/>");
+                    input.val(oldValue);
                     let node = $("<div><span>"+item+"</span> </div>").append(input);
                     input.change(()=>{
                         nicknames[ccHash] = input.val();

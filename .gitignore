@@ -1,2 +1,3 @@
-extension.pem
-extension.crx
+**/key.pem
+**/extension.crx
+**/extension.zip
