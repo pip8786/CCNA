@@ -14,7 +14,7 @@ The extension does not store the 4 digit numbers of the credit card, instead usi
 
 # Releases
 ## 1.0.1 (Jan 1st, 2017)
-- Fixed #1 - Special characters in nicknames are now properly encoded.
+- Fixed [#1](../../issues/1) - Special characters in nicknames are now properly encoded.
 
 ## 1.0 (Dec 28th, 2016)
 - Initial release.
