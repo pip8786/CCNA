@@ -13,6 +13,10 @@ The extension can be found here: [Chrome Webstore] (https://chrome.google.com/we
 The extension does not store the 4 digit numbers of the credit card, instead using a hash to associate the nickname with the card number.
 
 # Releases
+## 1.0.2 (Jan 8th, 2017)
+- Fixed [#2](../../issues/2) - Icons and banner images.
+- Fixed [#3](../../issues/3) - More reliable insertion of the nicknames into the DOM.
+
 ## 1.0.1 (Jan 1st, 2017)
 - Fixed [#1](../../issues/1) - Special characters in nicknames are now properly encoded.
 
