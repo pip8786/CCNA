@@ -11,3 +11,10 @@ The extension can be found here: [Chrome Webstore] (https://chrome.google.com/we
 
 # Security
 The extension does not store the 4 digit numbers of the credit card, instead using a hash to associate the nickname with the card number.
+
+# Releases
+## 1.0.1 (Jan 1st, 2017)
+- Fixed [#1](../../issues/1) - Special characters in nicknames are now properly encoded.
+
+## 1.0 (Dec 28th, 2016)
+- Initial release.
