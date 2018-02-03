@@ -13,6 +13,11 @@ The extension can be found here: [Chrome Webstore] (https://chrome.google.com/we
 The extension does not store the 4 digit numbers of the credit card, instead using a hash to associate the nickname with the card number.
 
 # Releases
+## 1.0.3 (Feb 3rd, 2018)
+- Fixed [#4](../../issues/4) - Payment options on amazon location changed, needed update in code
+- Fixed [#5](../../issues/5) - Added smile support
+- Fixed [#6](../../issues/6) - Added support for all domains supported by amazon
+
 ## 1.0.2 (Jan 8th, 2017)
 - Fixed [#2](../../issues/2) - Icons and banner images.
 - Fixed [#3](../../issues/3) - More reliable insertion of the nicknames into the DOM.
