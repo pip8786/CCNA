@@ -14,7 +14,64 @@
     "js":["lib/sha256.js","lib/jquery-3.1.1.slim.min.js","src/content.js"],
     "matches":[
       "https://*.amazon.com/gp/wallet*",
-      "https://*.amazon.com/gp/buy/*"
+      "https://*.amazon.com/gp/buy/*",
+      "https://*.amazon.com/cpe/managepaymentmethods*",
+
+      "https://*.amazon.co.uk/gp/wallet*",
+      "https://*.amazon.co.uk/gp/buy/*",
+      "https://*.amazon.co.uk/cpe/managepaymentmethods*",
+
+      "https://*.amazon.fr/gp/wallet*",
+      "https://*.amazon.fr/gp/buy/*",
+      "https://*.amazon.fr/cpe/managepaymentmethods*",
+
+      "https://*.amazon.cn/gp/wallet*",
+      "https://*.amazon.cn/gp/buy/*",
+      "https://*.amazon.cn/cpe/managepaymentmethods*",
+
+      "https://*.amazon.in/gp/wallet*",
+      "https://*.amazon.in/gp/buy/*",
+      "https://*.amazon.in/cpe/managepaymentmethods*",
+
+      "https://*.amazon.co.jp/gp/wallet*",
+      "https://*.amazon.co.jp/gp/buy/*",
+      "https://*.amazon.co.jp/cpe/managepaymentmethods*",
+
+      "https://*.amazon.com.sg/gp/wallet*",
+      "https://*.amazon.com.sg/gp/buy/*",
+      "https://*.amazon.com.sg/cpe/managepaymentmethods*",
+
+      "https://*.amazon.de/gp/wallet*",
+      "https://*.amazon.de/gp/buy/*",
+      "https://*.amazon.de/cpe/managepaymentmethods*",
+
+      "https://*.amazon.it/gp/wallet*",
+      "https://*.amazon.it/gp/buy/*",
+      "https://*.amazon.it/cpe/managepaymentmethods*",
+
+      "https://*.amazon.nl/gp/wallet*",
+      "https://*.amazon.nl/gp/buy/*",
+      "https://*.amazon.nl/cpe/managepaymentmethods*",
+
+      "https://*.amazon.es/gp/wallet*",
+      "https://*.amazon.es/gp/buy/*",
+      "https://*.amazon.es/cpe/managepaymentmethods*",
+
+      "https://*.amazon.ca/gp/wallet*",
+      "https://*.amazon.ca/gp/buy/*",
+      "https://*.amazon.ca/cpe/managepaymentmethods*",
+
+      "https://*.amazon.com.mx/gp/wallet*",
+      "https://*.amazon.com.mx/gp/buy/*",
+      "https://*.amazon.com.mx/cpe/managepaymentmethods*",
+
+      "https://*.amazon.au/gp/wallet*",
+      "https://*.amazon.au/gp/buy/*",
+      "https://*.amazon.au/cpe/managepaymentmethods*",
+
+      "https://*.amazon.br/gp/wallet*",
+      "https://*.amazon.br/gp/buy/*",
+      "https://*.amazon.br/cpe/managepaymentmethods*"
     ]
   }],
   "permissions": [

@@ -91,15 +91,16 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
     }
 });
 
-const DOMAIN_REGEX = /^https:\/\/(smile|www)\.amazon\.com/;
+const DOMAIN_REGEX = /^https:\/\/(smile|www)\.amazon\.[a-zA-Z.]{2,6}/;
 const WALLET_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/wallet`);
 const BUY_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/buy`);
+const PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/managepaymentmethods`);
 
 document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (url) {
         let type = 0;
 
-        if (WALLET_REGEX.test(url)) {
+        if (WALLET_REGEX.test(url) || PAYMENT_REGEX.test(url)) {
             type = 1;
         } else if (BUY_REGEX.test(url)) {
             type = 2;
