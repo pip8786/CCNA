@@ -32,7 +32,7 @@ function getCurrentTabUrl(callback) {
         // If you want to see the URL of other tabs (e.g. after removing active:true
         // from |queryInfo|), then the "tabs" permission is required to see their
         // "url" properties.
-        console.assert(typeof url == 'string', 'tab.url should be a string');
+        console.assert(typeof url === 'string', 'tab.url should be a string');
 
         callback(url);
     });
@@ -52,21 +52,21 @@ function renderStatus(statusText) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender) {
-    if (request.action == "getCards") {
+    if (request.action === "getCards") {
         if (request.numbers.length) {
             let nicknames = {};
             chrome.storage.sync.get("nicknames", (data) => {
-                if(data["nicknames"] != undefined) {
+                if(data["nicknames"] !== undefined) {
                     nicknames = data["nicknames"];
                 }
                 renderStatus("Cards and nicknames:");
                 request.numbers.forEach((item) => {
                     const ccHash = CryptoJS.SHA256(item);
-                    const oldValue = (nicknames[ccHash] != undefined) ? nicknames[ccHash] : "";
+                    const oldValue = (nicknames[ccHash] !== undefined) ? nicknames[ccHash] : "";
                     const input = $("<input type='text' id='card"+ccHash+"' placeholder='Nickname'/>");
                     input.val(oldValue);
                     let node = $("<div><span>"+item+"</span> </div>").append(input);
-                    input.change(()=>{
+                    input.keyup(()=>{
                         nicknames[ccHash] = input.val();
                        chrome.storage.sync.set({"nicknames": nicknames}, () => {
                            console.log("Saved nicknames.");
@@ -95,6 +95,8 @@ const DOMAIN_REGEX = /^https:\/\/(smile|www)\.amazon\.[a-zA-Z.]{2,6}/;
 const WALLET_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/wallet`);
 const BUY_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/buy`);
 const PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/managepaymentmethods`);
+const ASV_AUTO_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/autoreload/`);
+const ASV_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/.*`);
 
 document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (url) {
@@ -104,6 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
             type = 1;
         } else if (BUY_REGEX.test(url)) {
             type = 2;
+        } else if (ASV_AUTO_REGEX.test(url)) {
+            type = 4;
+        } else if (ASV_REGEX.test(url)) {
+            type = 3;
         }
 
         if (type > 0) {

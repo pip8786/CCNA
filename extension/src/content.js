@@ -1,5 +1,5 @@
 
-const regex = /ending in\s*(\d{4})/;
+const regex = /ending in\s*(\d{2,4})/;
 
 
 // MutationSelectorObserver represents a selector and it's associated initialization callback.
@@ -16,7 +16,7 @@ msobservers.initialize = function (selector, callback) {
     // called once per element.
     let seen = [];
     callbackOnce = function () {
-        if (seen.indexOf(this) == -1) {
+        if (seen.indexOf(this) === -1) {
             seen.push(this);
             $(this).each(callback);
         }
@@ -52,32 +52,46 @@ observer.observe(document.documentElement, {childList: true, subtree: true, attr
 
 function updateNicknames() {
     chrome.storage.sync.get("nicknames", (data) => {
-        const nicknames = data["nicknames"] == undefined ? {} : data["nicknames"];
+        const nicknames = data["nicknames"] === undefined ? {} : data["nicknames"];
         const appendNickname = function() {
             $(this).find(".cc_nickname").remove();
-            const ccnum = CryptoJS.SHA256($(this).text().match(regex)[1]);
-            if(nicknames[ccnum] != undefined) {
+            const matches = $(this).text().match(regex);
+            let cardNumber = "0";
+            if(matches && matches.length >= 2) {
+                cardNumber = matches[1];
+            }
+            const ccnum = CryptoJS.SHA256(cardNumber);
+            if(nicknames[ccnum] !== undefined) {
                 const node = $("<span class='cc_nickname'></span>").text(" - "+nicknames[ccnum]);
                 $(this).append(node);
             }
         };
 
         msobservers.initialize(".pmts-instrument-number-tail", appendNickname);
-        msobservers.initialize(".card-info span.a-color-secondary", appendNickname);
+        msobservers.initialize(".payment-row span.a-color-secondary", appendNickname);
         msobservers.initialize("#payment-information span.a-color-secondary", appendNickname);
+        msobservers.initialize(".pmts-instrument-box span.a-color-secondary", appendNickname);
+        msobservers.initialize(".pmts-inst-tail", appendNickname);
     });
 }
 
 function getCardNumbers(type) {
     let cardNumbers = [];
     let selector = null;
-    if (type == 1) {
+    if (type === 1) {
         selector = $(".pmts-instrument-number-tail");
-    } else if (type == 2) {
-        selector = $(".card-info span.a-color-secondary");
+    } else if (type === 2) {
+        selector = $(".payment-row span.a-color-secondary");
+    } else if (type === 3) {
+        selector = $(".pmts-instrument-box span.a-color-secondary");
+    } else if (type === 4) {
+        selector = $(".pmts-inst-tail");
     }
    selector.each(function(){
-        cardNumbers.push($(this).text().match(regex)[1]);
+       const matches = $(this).text().match(regex);
+       if(matches && matches.length >= 2) {
+           cardNumbers.push(matches[1]);
+       }
     });
 
     chrome.runtime.sendMessage({
