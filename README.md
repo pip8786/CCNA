@@ -11,6 +11,9 @@ The extension can be found here: [Chrome Webstore](https://chrome.google.com/web
 The extension does not store the 4 digit numbers of the credit card, instead using a hash to associate the nickname with the card number.
 
 # Releases
+## 1.0.5 (Jan 20th, 2019)
+- Fixed an issue with finding CCs on non english sites.
+
 ## 1.0.4 (Dec 25th, 2018)
 - Fixed [#10](../../issues/10) - Support Reload Your Balance page
 - Added support for checking accounts

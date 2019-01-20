@@ -1,5 +1,5 @@
 
-const regex = /ending in\s*(\d{2,4})/;
+const regex = /.*?(\d{2,4})/;
 
 
 // MutationSelectorObserver represents a selector and it's associated initialization callback.
