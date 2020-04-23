@@ -11,6 +11,11 @@ The extension can be found here: [Chrome Webstore](https://chrome.google.com/web
 The extension does not store the 4 digit numbers of the credit card, instead using a hash to associate the nickname with the card number.
 
 # Releases
+
+## 1.0.6 (Apr 23rd, 2020)
+- Fixed some issues with the URLs on non .com sites.
+- Updated some jQuery selectors to match the new CSS from Amazon.
+
 ## 1.0.5 (Jan 20th, 2019)
 - Fixed an issue with finding CCs on non english sites.
 

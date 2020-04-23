@@ -72,6 +72,7 @@ function updateNicknames() {
         msobservers.initialize("#payment-information span.a-color-secondary", appendNickname);
         msobservers.initialize(".pmts-instrument-box span.a-color-secondary", appendNickname);
         msobservers.initialize(".pmts-inst-tail", appendNickname);
+        msobservers.initialize(".pmts-cc-number", appendNickname);
     });
 }
 
@@ -81,7 +82,7 @@ function getCardNumbers(type) {
     if (type === 1) {
         selector = $(".pmts-instrument-number-tail");
     } else if (type === 2) {
-        selector = $(".payment-row span.a-color-secondary");
+        selector = $(".pmts-cc-number");
     } else if (type === 3) {
         selector = $(".pmts-instrument-box span.a-color-secondary");
     } else if (type === 4) {
