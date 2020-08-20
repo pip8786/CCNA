@@ -61,15 +61,23 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                 }
                 renderStatus("Cards and nicknames:");
                 request.numbers.forEach((item) => {
+                    const sItem = item;
+                    //If this is length 3, it could be a bank account.
+                    //On the checkout page, bank accounts are displayed with only 2 digits.
+                    //Store it with two digits instead.
+                    if(sItem.length === 3) {
+                        item = sItem.substr(1);
+                    }
                     const ccHash = CryptoJS.SHA256(item);
                     const oldValue = (nicknames[ccHash] !== undefined) ? nicknames[ccHash] : "";
+
                     const input = $("<input type='text' id='card"+ccHash+"' placeholder='Nickname'/>");
                     input.val(oldValue);
-                    let node = $("<div><span>"+item+"</span> </div>").append(input);
+                    let node = $("<div><span>"+sItem+"</span> </div>").append(input);
                     input.keyup(()=>{
                         nicknames[ccHash] = input.val();
                        chrome.storage.sync.set({"nicknames": nicknames}, () => {
-                           console.log("Saved nicknames.");
+                           console.log("Saved nicknames.", nicknames);
                            chrome.tabs.executeScript(null, {
                                code: "updateNicknames();"
                            }, function() {
@@ -105,11 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (WALLET_REGEX.test(url) || PAYMENT_REGEX.test(url) || CPE_WALLET_REGEX.test(url)) {
             type = 1;
-        } else if (BUY_REGEX.test(url)) {
-            type = 2;
         } else if (ASV_AUTO_REGEX.test(url)) {
             type = 4;
-        } else if (ASV_REGEX.test(url)) {
+        } else if (ASV_REGEX.test(url) || BUY_REGEX.test(url)) {
             type = 3;
         }
 

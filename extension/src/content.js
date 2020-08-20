@@ -58,7 +58,11 @@ function updateNicknames() {
             const matches = $(this).text().match(regex);
             let cardNumber = "0";
             if(matches && matches.length >= 2) {
-                cardNumber = matches[1];
+                if(matches[1].length === 3) {
+                    cardNumber = matches[1].substr(1);
+                } else {
+                    cardNumber = matches[1];
+                }
             }
             const ccnum = CryptoJS.SHA256(cardNumber);
             if(nicknames[ccnum] !== undefined) {
@@ -70,7 +74,7 @@ function updateNicknames() {
         msobservers.initialize(".pmts-instrument-number-tail", appendNickname);
         msobservers.initialize(".payment-row span.a-color-secondary", appendNickname);
         msobservers.initialize("#payment-information span.a-color-secondary", appendNickname);
-        msobservers.initialize(".pmts-instrument-box span.a-color-secondary", appendNickname);
+        msobservers.initialize(".pmts-instrument-box span.a-color-secondary:not(.a-text-bold)", appendNickname);
         msobservers.initialize(".pmts-inst-tail", appendNickname);
         msobservers.initialize(".pmts-cc-number", appendNickname);
     });
@@ -84,7 +88,7 @@ function getCardNumbers(type) {
     } else if (type === 2) {
         selector = $(".pmts-cc-number");
     } else if (type === 3) {
-        selector = $(".pmts-instrument-box span.a-color-secondary");
+        selector = $(".pmts-instrument-box span.a-color-secondary:not(.a-text-bold)");
     } else if (type === 4) {
         selector = $(".pmts-inst-tail");
     }
