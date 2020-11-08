@@ -106,6 +106,7 @@ const BUY_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/buy`);
 const PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/managepaymentmethods`);
 const ASV_AUTO_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/autoreload/`);
 const ASV_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/.*`);
+const ORDER_DETAILS_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/your-account/order-details/.*`);
 
 document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (url) {
@@ -117,6 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
             type = 4;
         } else if (ASV_REGEX.test(url) || BUY_REGEX.test(url)) {
             type = 3;
+        } else if(ORDER_DETAILS_REGEX.test(url)) {
+            type = 5;
         }
 
         if (type > 0) {

@@ -77,6 +77,7 @@ function updateNicknames() {
         msobservers.initialize(".pmts-instrument-box span.a-color-secondary:not(.a-text-bold)", appendNickname);
         msobservers.initialize(".pmts-inst-tail", appendNickname);
         msobservers.initialize(".pmts-cc-number", appendNickname);
+        msobservers.initialize(".a-row.a-spacing-mini span", appendNickname);
     });
 }
 
@@ -91,6 +92,8 @@ function getCardNumbers(type) {
         selector = $(".pmts-instrument-box span.a-color-secondary:not(.a-text-bold)");
     } else if (type === 4) {
         selector = $(".pmts-inst-tail");
+    } else if (type === 5) {
+        selector = $(".a-row.a-spacing-mini span");
     }
    selector.each(function(){
        const matches = $(this).text().match(regex);

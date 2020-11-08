@@ -12,6 +12,9 @@ The extension does not store the 4 digit numbers of the credit card, instead usi
 
 # Releases
 
+## 1.0.8 (Nov 8th, 2020)
+- Fixed [#12](../../issues/12) - Add the nickname to the order details page.
+
 ## 1.0.7 (Aug 20th, 2020)
 - Fixed [#11](../../issues/11) - Bank account nicknames don't show on checkout page
 - Updated some jQuery selectors to more accurately match all account types.
