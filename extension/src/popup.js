@@ -83,7 +83,8 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
                            }, function() {
                                // If you try and inject into an extensions page or the webstore/NTP you'll get an error
                                if (chrome.runtime.lastError) {
-                                   message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
+                                   console.log("Error injecting script:", chrome.runtime.lastError.message);
+                                   //status.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
                                }
                            });
                        });
@@ -129,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }, function() {
                 // If you try and inject into an extensions page or the webstore/NTP you'll get an error
                 if (chrome.runtime.lastError) {
-                    message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
+                    console.log("Error injecting script:", chrome.runtime.lastError.message);
+                    //status.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
                 }
             });
         } else {
