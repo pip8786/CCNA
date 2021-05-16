@@ -117,7 +117,9 @@ document.addEventListener('DOMContentLoaded', function () {
             type = 1;
         } else if (ASV_AUTO_REGEX.test(url)) {
             type = 4;
-        } else if (ASV_REGEX.test(url) || BUY_REGEX.test(url)) {
+        } else if(BUY_REGEX.test(url)) {
+            type = 2;
+        } else if (ASV_REGEX.test(url)) {
             type = 3;
         } else if(ORDER_DETAILS_REGEX.test(url)) {
             type = 5;

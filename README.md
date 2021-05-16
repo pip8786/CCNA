@@ -12,6 +12,9 @@ The extension does not store the 4 digit numbers of the credit card, instead usi
 
 # Releases
 
+## 1.0.9 (May 16th, 2021)
+- Fixed Amazon changing the checkout page HTML back to what it was. It couldn't find the cards.
+
 ## 1.0.8 (Nov 8th, 2020)
 - Fixed [#12](../../issues/12) - Add the nickname to the order details page.
 
