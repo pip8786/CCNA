@@ -104,7 +104,8 @@ const DOMAIN_REGEX = /^https:\/\/(smile|www)\.amazon\.[a-zA-Z.]{2,6}/;
 const WALLET_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/wallet`);
 const CPE_WALLET_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/yourpayments/wallet`);
 const BUY_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/buy`);
-const PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/managepaymentmethods`);
+const MANAGE_PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/managepaymentmethods`);
+const REVISE_PAYMENT_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/cpe/revisepayments`);
 const ASV_AUTO_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/autoreload/`);
 const ASV_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/asv/.*`);
 const ORDER_DETAILS_REGEX = new RegExp(`${ DOMAIN_REGEX.source }/gp/your-account/order-details/.*`);
@@ -113,20 +114,20 @@ document.addEventListener('DOMContentLoaded', function () {
     getCurrentTabUrl(function (url) {
         let type = 0;
 
-        if (WALLET_REGEX.test(url) || PAYMENT_REGEX.test(url) || CPE_WALLET_REGEX.test(url)) {
+        if (WALLET_REGEX.test(url) || MANAGE_PAYMENT_REGEX.test(url) || CPE_WALLET_REGEX.test(url)) {
             type = 1;
         } else if (ASV_AUTO_REGEX.test(url)) {
             type = 4;
-        } else if(BUY_REGEX.test(url)) {
+        } else if (BUY_REGEX.test(url) || REVISE_PAYMENT_REGEX.test(url)) {
             type = 2;
         } else if (ASV_REGEX.test(url)) {
             type = 3;
-        } else if(ORDER_DETAILS_REGEX.test(url)) {
+        } else if (ORDER_DETAILS_REGEX.test(url)) {
             type = 5;
         }
 
         if (type > 0) {
-            renderStatus("This is an amazon wallet tab.");
+            renderStatus("This is an Amazon Wallet tab.");
             chrome.tabs.executeScript(null, {
                 code: "getCardNumbers("+type+");"
             }, function() {
@@ -137,9 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         } else {
-            renderStatus("This is not an amazon wallet or payment tab.");
+            renderStatus("This is not an Amazon Wallet or payment tab.");
         }
     });
 });
-
-

@@ -22,6 +22,7 @@
       "https://*.amazon.com/gp/your-account/order-details/*",
       "https://*.amazon.com/cpe/yourpayments/wallet*",
       "https://*.amazon.com/cpe/managepaymentmethods*",
+      "https://*.amazon.com/cpe/revisepayments*",
       "https://*.amazon.com/asv/reload*",
       "https://*.amazon.com/asv/autoreload*",
 
@@ -30,6 +31,7 @@
       "https://*.amazon.co.uk/gp/your-account/order-details/*",
       "https://*.amazon.co.uk/cpe/yourpayments/wallet*",
       "https://*.amazon.co.uk/cpe/managepaymentmethods*",
+      "https://*.amazon.co.uk/cpe/revisepayments*",
       "https://*.amazon.co.uk/asv/reload*",
       "https://*.amazon.co.uk/asv/autoreload*",
 
@@ -38,6 +40,7 @@
       "https://*.amazon.fr/gp/your-account/order-details/*",
       "https://*.amazon.fr/cpe/yourpayments/wallet*",
       "https://*.amazon.fr/cpe/managepaymentmethods*",
+      "https://*.amazon.fr/cpe/revisepayments*",
       "https://*.amazon.fr/asv/reload*",
       "https://*.amazon.fr/asv/autoreload*",
 
@@ -46,6 +49,7 @@
       "https://*.amazon.cn/gp/your-account/order-details/*",
       "https://*.amazon.cn/cpe/yourpayments/wallet*",
       "https://*.amazon.cn/cpe/managepaymentmethods*",
+      "https://*.amazon.cn/cpe/revisepayments*",
       "https://*.amazon.cn/asv/reload*",
       "https://*.amazon.cn/asv/autoreload*",
 
@@ -54,6 +58,7 @@
       "https://*.amazon.in/gp/your-account/order-details/*",
       "https://*.amazon.in/cpe/yourpayments/wallet*",
       "https://*.amazon.in/cpe/managepaymentmethods*",
+      "https://*.amazon.in/cpe/revisepayments*",
       "https://*.amazon.in/asv/reload*",
       "https://*.amazon.in/asv/autoreload*",
 
@@ -62,6 +67,7 @@
       "https://*.amazon.co.jp/gp/your-account/order-details/*",
       "https://*.amazon.co.jp/cpe/yourpayments/wallet*",
       "https://*.amazon.co.jp/cpe/managepaymentmethods*",
+      "https://*.amazon.co.jp/cpe/revisepayments*",
       "https://*.amazon.co.jp/asv/reload*",
       "https://*.amazon.co.jp/asv/autoreload*",
 
@@ -70,6 +76,7 @@
       "https://*.amazon.com.sg/gp/your-account/order-details/*",
       "https://*.amazon.com.sg/cpe/yourpayments/wallet*",
       "https://*.amazon.com.sg/cpe/managepaymentmethods*",
+      "https://*.amazon.com.sg/cpe/revisepayments*",
       "https://*.amazon.com.sg/asv/reload*",
       "https://*.amazon.com.sg/asv/autoreload*",
 
@@ -78,6 +85,7 @@
       "https://*.amazon.de/gp/your-account/order-details/*",
       "https://*.amazon.de/cpe/yourpayments/wallet*",
       "https://*.amazon.de/cpe/managepaymentmethods*",
+      "https://*.amazon.de/cpe/revisepayments*",
       "https://*.amazon.de/asv/reload*",
       "https://*.amazon.de/asv/autoreload*",
 
@@ -86,6 +94,7 @@
       "https://*.amazon.it/gp/your-account/order-details/*",
       "https://*.amazon.it/cpe/yourpayments/wallet*",
       "https://*.amazon.it/cpe/managepaymentmethods*",
+      "https://*.amazon.it/cpe/revisepayments*",
       "https://*.amazon.it/asv/reload*",
       "https://*.amazon.it/asv/autoreload*",
 
@@ -94,6 +103,7 @@
       "https://*.amazon.nl/gp/your-account/order-details/*",
       "https://*.amazon.nl/cpe/yourpayments/wallet*",
       "https://*.amazon.nl/cpe/managepaymentmethods*",
+      "https://*.amazon.nl/cpe/revisepayments*",
       "https://*.amazon.nl/asv/reload*",
       "https://*.amazon.nl/asv/autoreload*",
 
@@ -102,6 +112,7 @@
       "https://*.amazon.es/gp/your-account/order-details/*",
       "https://*.amazon.es/cpe/yourpayments/wallet*",
       "https://*.amazon.es/cpe/managepaymentmethods*",
+      "https://*.amazon.es/cpe/revisepayments*",
       "https://*.amazon.es/asv/reload*",
       "https://*.amazon.es/asv/autoreload*",
 
@@ -110,6 +121,7 @@
       "https://*.amazon.ca/gp/your-account/order-details/*",
       "https://*.amazon.ca/cpe/yourpayments/wallet*",
       "https://*.amazon.ca/cpe/managepaymentmethods*",
+      "https://*.amazon.ca/cpe/revisepayments*",
       "https://*.amazon.ca/asv/reload*",
       "https://*.amazon.ca/asv/autoreload*",
 
@@ -118,6 +130,7 @@
       "https://*.amazon.com.mx/gp/your-account/order-details/*",
       "https://*.amazon.com.mx/cpe/yourpayments/wallet*",
       "https://*.amazon.com.mx/cpe/managepaymentmethods*",
+      "https://*.amazon.com.mx/cpe/revisepayments*",
       "https://*.amazon.com.mx/asv/reload*",
       "https://*.amazon.com.mx/asv/autoreload*",
 
@@ -126,6 +139,7 @@
       "https://*.amazon.au/gp/your-account/order-details/*",
       "https://*.amazon.au/cpe/yourpayments/wallet*",
       "https://*.amazon.au/cpe/managepaymentmethods*",
+      "https://*.amazon.au/cpe/revisepayments*",
       "https://*.amazon.au/asv/reload*",
       "https://*.amazon.au/asv/autoreload*",
 
@@ -134,6 +148,7 @@
       "https://*.amazon.br/gp/your-account/order-details/*",
       "https://*.amazon.br/cpe/yourpayments/wallet*",
       "https://*.amazon.br/cpe/managepaymentmethods*",
+      "https://*.amazon.br/cpe/revisepayments*",
       "https://*.amazon.br/asv/reload*",
       "https://*.amazon.br/asv/autoreload*"
     ]
