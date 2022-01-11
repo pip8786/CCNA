@@ -12,6 +12,9 @@ The extension does not store the 4 digit numbers of the credit card, instead usi
 
 # Releases
 
+## 1.0.10 (Jan 11th, 2022)
+- Releasing [#14](../../pull/14) - Support for the Revise Payments screen - Thanks @rossshannon 
+
 ## 1.0.9 (May 16th, 2021)
 - Fixed Amazon changing the checkout page HTML back to what it was. It couldn't find the cards.
 
