@@ -3,7 +3,7 @@
   "name": "Credit Card Nicknames for Amazon",
   "short_name" :"CCNA",
   "description": "This extension allows you to assign nick names to your credit cards on Amazon - Now for any country - And includes Smile!",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "browser_specific_settings": {
     "gecko": {
       "id": "ccna@philippesabourin.com"
@@ -134,14 +134,14 @@
       "https://*.amazon.com.mx/asv/reload*",
       "https://*.amazon.com.mx/asv/autoreload*",
 
-      "https://*.amazon.au/gp/wallet*",
-      "https://*.amazon.au/gp/buy/*",
-      "https://*.amazon.au/gp/your-account/order-details/*",
-      "https://*.amazon.au/cpe/yourpayments/wallet*",
-      "https://*.amazon.au/cpe/managepaymentmethods*",
-      "https://*.amazon.au/cpe/revisepayments*",
-      "https://*.amazon.au/asv/reload*",
-      "https://*.amazon.au/asv/autoreload*",
+      "https://*.amazon.com.au/gp/wallet*",
+      "https://*.amazon.com.au/gp/buy/*",
+      "https://*.amazon.com.au/gp/your-account/order-details/*",
+      "https://*.amazon.com.au/cpe/yourpayments/wallet*",
+      "https://*.amazon.com.au/cpe/managepaymentmethods*",
+      "https://*.amazon.com.au/cpe/revisepayments*",
+      "https://*.amazon.com.au/asv/reload*",
+      "https://*.amazon.com.au/asv/autoreload*",
 
       "https://*.amazon.br/gp/wallet*",
       "https://*.amazon.br/gp/buy/*",
