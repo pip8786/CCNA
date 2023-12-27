@@ -1,39 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--
  This page is shown when the extension button is clicked, because the
  "browser_action" field in manifest.json contains the "default_popup" key with
  value "popup.html".
  -->
 <html>
-<head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
     <title>Getting Started Extension's Popup</title>
     <style>
-        body {
-            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-            font-size: 100%;
-        }
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
 
-        #status {
-            /* avoid an excessively wide status text */
-            white-space: pre;
-            overflow: hidden;
-            max-width: 600px;
-        }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        overflow: hidden;
+        max-width: 600px;
+      }
 
-        #cardNicknames {
-            min-width: 200px;
-        }
+      #cardNicknames {
+        min-width: 300px;
+      }
+
+      #footer {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: small;
+      }
     </style>
 
     <script src="../lib/sha256.js"></script>
     <script src="../lib/jquery-3.1.1.slim.min.js"></script>
+    <script src="udpateNicknames.js"></script>
     <script src="popup.js"></script>
-</head>
-<body>
-<div id="status"></div>
-<div id="cardNicknames" hidden></div>
-</body>
+  </head>
+  <body>
+    <div id="status"></div>
+    <div id="cardNicknames" hidden></div>
+    <div id="footer">
+      <hr />
+      <div>
+        <a
+          target="_blank"
+          href="https://chromewebstore.google.com/detail/credit-card-nicknames-for/iodihdkgnjbpkdimohmpgbcfoioebbnf"
+        >
+          Credit Card Nicknames for Amazon
+        </a>
+      </div>
+      <div>
+        Get help: <a target="_blank" href="https://github.com/pip8786/CCNA/issues">Github</a> |
+        <a target="_blank" href="mailto:philippe.sabourin@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </body>
 </html>
-
