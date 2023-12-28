@@ -50,7 +50,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
               console.log("Saved nicknames.", nicknames);
 
               getCurrentTab((tab) => {
-                chrome.scripting.executeScript({ target: { tabId: tab.id }, function: updateNicknames }).then(() => {
+                chrome.scripting.executeScript({ target: { tabId: tab.id }, func: updateNicknames }).then(() => {
                   // If you try and inject into an extensions page or the webstore/NTP you'll get an error
                   if (chrome.runtime.lastError) {
                     console.log("Error injecting script:", chrome.runtime.lastError.message);
@@ -98,15 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (type > 0) {
       renderStatus("This is an Amazon wallet tab.");
       getCurrentTab((tab) => {
-        chrome.scripting
-          .executeScript({ target: { tabId: tab.id }, function: getCardNumbers, args: [type] })
-          .then(() => {
-            // If you try and inject into an extensions page or the webstore/NTP you'll get an error
-            if (chrome.runtime.lastError) {
-              console.log("Error injecting script:", chrome.runtime.lastError.message);
-              //status.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
-            }
-          });
+        chrome.scripting.executeScript({ target: { tabId: tab.id }, func: getCardNumbers, args: [type] }).then(() => {
+          // If you try and inject into an extensions page or the webstore/NTP you'll get an error
+          if (chrome.runtime.lastError) {
+            console.log("Error injecting script:", chrome.runtime.lastError.message);
+            //status.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
+          }
+        });
       });
     } else {
       renderStatus("This is not an Amazon wallet or payment tab.");
