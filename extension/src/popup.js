@@ -79,6 +79,7 @@ const REVISE_PAYMENT_REGEX = new RegExp(`${DOMAIN_REGEX.source}/cpe/revisepaymen
 const ASV_AUTO_REGEX = new RegExp(`${DOMAIN_REGEX.source}/asv/autoreload/`);
 const ASV_REGEX = new RegExp(`${DOMAIN_REGEX.source}/asv/.*`);
 const ORDER_DETAILS_REGEX = new RegExp(`${DOMAIN_REGEX.source}/gp/your-account/order-details.*`);
+const CHECKOUT_REGEX = new RegExp(`${DOMAIN_REGEX.source}/checkout`);
 
 document.addEventListener("DOMContentLoaded", function () {
   getCurrentTabUrl(function (url) {
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       type = 1;
     } else if (ASV_AUTO_REGEX.test(url)) {
       type = 4;
-    } else if (BUY_REGEX.test(url) || REVISE_PAYMENT_REGEX.test(url)) {
+    } else if (BUY_REGEX.test(url) || REVISE_PAYMENT_REGEX.test(url) || CHECKOUT_REGEX.test(url)) {
       type = 2;
     } else if (ASV_REGEX.test(url)) {
       type = 3;
@@ -118,7 +119,7 @@ function getCardNumbers(type) {
   if (type === 1) {
     selector = $(".pmts-instrument-number-tail:not(.a-size-base-plus)");
   } else if (type === 2) {
-    selector = $(".pmts-cc-number");
+    selector = $(".pmts-cc-number,#payment-option-text-default");
   } else if (type === 3) {
     selector = $(".pmts-instrument-box span.a-color-secondary:not(.a-text-bold)");
   } else if (type === 4) {

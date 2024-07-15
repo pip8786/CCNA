@@ -29,5 +29,6 @@ function updateNicknames() {
       ".pmts-payments-instrument-detail-box-paystationpaymentmethod .a-color-base",
       appendNickname
     );
+    msobservers.initialize("#payment-option-text-default span.break-word", appendNickname);
   });
 }

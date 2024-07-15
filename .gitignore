@@ -2,3 +2,4 @@
 **/extension.crx
 **/extension.zip
 .idea/**
+.DS_Store
